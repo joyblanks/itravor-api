@@ -18,10 +18,10 @@ class CreateSubCategoriesTable extends Migration
             $table->string('icon');
             $table->string('title');
             $table->string('description');
-            $table->integer('subcategory_id')->unsigned();
+            $table->integer('category_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('subcategory_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
@@ -33,7 +33,7 @@ class CreateSubCategoriesTable extends Migration
     public function down()
     {
         Schema::table('sub_categories', function ($table) {
-            $table->dropForeign('sub_categories_subcategory_id_foreign');
+            $table->dropForeign('sub_categories_category_id_foreign');
         });
         Schema::dropIfExists('sub_categories');
     }

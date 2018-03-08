@@ -18,8 +18,8 @@ class CategoriesTableSeeder extends Seeder
         for ($i = 0; $i < 5; $i++) {
             Category::create([
                 'title' => $title[$i],
-                'icon' => 'https://upload.wikimedia.org/wikipedia/commons/9/98/Human-emblem-star-blue-128.png',
-                'description' => $faker->paragraph,
+                'icon' => '../assets/icons/'.strtolower($title[$i]).'.png',
+                'description' => $faker->sentence,
             ]);
         }
     }
