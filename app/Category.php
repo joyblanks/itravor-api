@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $fillable = ['icon', 'description'];
+    protected $fillable = ['icon', 'title', 'description'];
+
+    public function articles(){
+        return $this->belongsToMany('App\Article', 'article_category_pivot');
+    }
 }

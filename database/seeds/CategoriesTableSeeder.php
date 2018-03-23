@@ -8,6 +8,7 @@ class CategoriesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     * php artisan db:seed --class=CategoriesTableSeeder
      *
      * @return void
      */
