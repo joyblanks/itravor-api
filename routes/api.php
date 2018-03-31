@@ -30,3 +30,6 @@ Route::get('categories/{category}', 'CategoriesController@show');
 Route::post('categories','CategoriesController@store');
 Route::put('categories/{category}','CategoriesController@update');
 Route::delete('categories/{category}', 'CategoriesController@delete');
+
+
+Route::get('session', 'SessionController@checkuser');
