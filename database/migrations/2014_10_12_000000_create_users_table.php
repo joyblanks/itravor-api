@@ -11,15 +11,15 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up(){
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('given_name');
+            $table->string('family_name');
             $table->string('email')->unique();
-            $table->string('image');
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('picture');
+            $table->string('google_id');
             $table->timestamps();
         });
     }
@@ -29,8 +29,9 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down(){
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::dropIfExists('users');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

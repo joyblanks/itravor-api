@@ -11,8 +11,7 @@ class CreateArticlesTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up(){
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
@@ -34,9 +33,11 @@ class CreateArticlesTable extends Migration
      */
     public function down()
     {
-        Schema::table('articles', function ($table) {
+        /*Schema::table('articles', function ($table) {
             $table->dropForeign('articles_user_id_foreign');
-        });
+        });*/
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0'); 
         Schema::dropIfExists('articles');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

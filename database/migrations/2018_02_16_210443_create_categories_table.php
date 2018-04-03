@@ -11,8 +11,7 @@ class CreateCategoriesTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up(){
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('icon');
@@ -27,8 +26,9 @@ class CreateCategoriesTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down(){
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::dropIfExists('categories');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

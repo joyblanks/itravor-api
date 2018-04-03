@@ -11,8 +11,7 @@ class CreateArticleCategoryPivotTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up(){
         Schema::create('article_category_pivot', function (Blueprint $table) {
             $table->integer('article_id')->unsigned()->index();
             $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
@@ -27,8 +26,13 @@ class CreateArticleCategoryPivotTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
-        Schema::drop('article_category');
+    public function down(){
+        /*Schema::table('article_category_pivot', function ($table) {
+            $table->dropForeign('article_category_pivot_category_id_foreign');
+            $table->dropForeign('article_category_pivot_article_id_foreign');
+        });*/
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0'); 
+        Schema::dropIfExists('article_category_pivot');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }
