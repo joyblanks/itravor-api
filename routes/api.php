@@ -32,4 +32,4 @@ Route::put('categories/{category}','CategoriesController@update');
 Route::delete('categories/{category}', 'CategoriesController@delete');
 
 
-Route::get('session', 'SessionController@checkuser');
+Route::post('session', 'SessionController@checkuser');

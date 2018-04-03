@@ -25,17 +25,18 @@ class SessionController extends Controller
         // TODO Put a try catch for unauthorized tokens
         $payload = $client->verifyIdToken($request->input('id_token'));
         
+        $user = null;
+        if($payload){
+            $user = User::firstOrNew(['google_id' => $payload['sub']]);
+            $user->name = $payload['name'];
+            $user->google_id = $payload['sub'];
+            $user->given_name = $payload['given_name'];
+            $user->family_name = $payload['family_name'];
+            $user->email = $payload['email'];
+            $user->picture = $payload['picture'];
+            $user->save();
+        }
         
-        $user = User::firstOrNew(['google_id' => $payload['sub']]);
-        $user->name = $payload['name'];
-        $user->google_id = $payload['sub'];
-        $user->given_name = $payload['given_name'];
-        $user->family_name = $payload['family_name'];
-        $user->email = $payload['email'];
-        $user->picture = $payload['picture'];
-        $user->save();
-        
-
         return $user ;
     }
 }
