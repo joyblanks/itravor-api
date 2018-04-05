@@ -18,6 +18,9 @@ class CreateArticlesTable extends Migration
             $table->string('body');
             $table->enum('type', ['blog','video','picture']);
             $table->point('location');
+            $table->string('keywords');
+            $table->string('thumbnail');
+            $table->boolean('is_public');
             $table->integer('user_id')->unsigned();
             $table->timestamps();
 

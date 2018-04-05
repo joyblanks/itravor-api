@@ -12,6 +12,9 @@ class Article extends Model
         'body',
         'type',
         'location',
+        'keywords',
+        'thumbnail',
+        'is_public',
         'user_id'
     ];
 
