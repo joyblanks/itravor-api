@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use App\Query\ArticleQuery;
 
-class ArticlesController extends Controller
-{
-    public function index(){
-        return Article::all();
+class ArticlesController extends Controller {
+
+    public function index(Request $request){
+        return ArticleQuery::apply($request);
     }
  
     public function show(Article $article){
