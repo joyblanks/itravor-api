@@ -15,7 +15,7 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('body');
+            $table->text('body');
             $table->enum('type', ['blog','video','picture']);
             $table->point('location');
             $table->string('keywords');
