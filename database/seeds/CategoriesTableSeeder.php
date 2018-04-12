@@ -15,11 +15,11 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         
-        $title = ['Adventure', 'Religious', 'Sports', 'Beach', 'Trekking'];
-        for ($i = 0; $i < 5; $i++) {
+        $title = ['Adventure', 'Religious', 'Sports', 'Beach', 'Trekking','Hills','Historical','Food'];
+        for ($i = 0; $i < 8; $i++) {
             Category::create([
                 'title' => $title[$i],
-                'icon' => '../assets/icons/'.strtolower($title[$i]).'.png',
+                'icon' => 'https://s3.ap-south-1.amazonaws.com/itravor.com/Assets/Category-Icons/'.strtolower($title[$i]).'.png',
                 'description' => $title[$i],
             ]);
         }
