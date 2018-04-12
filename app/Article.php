@@ -45,4 +45,8 @@ class Article extends Model
     public function categories(){
         return $this->belongsToMany('App\Category', 'article_category_pivot');
     }
+
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
 }

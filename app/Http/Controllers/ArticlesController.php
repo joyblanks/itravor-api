@@ -13,7 +13,7 @@ class ArticlesController extends Controller {
     }
  
     public function show(Article $article){
-        return $article;
+        return $article->load('categories', 'user');
     }
  
     public function store(Request $request){
