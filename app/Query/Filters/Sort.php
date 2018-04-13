@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Builder;
 class Sort implements Filter{
     /**
      * Apply a given search value to the builder instance.
+     * 
+     * Usage ?sort=location,asc
+     * Usage ?sort=id,desc
+     * Usage ?sort=title [asc by default]
      *
      * @param Builder $builder
      * @param mixed $value

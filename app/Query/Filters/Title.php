@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Builder;
 class Title implements Filter{
     /**
      * Apply a given search value to the builder instance.
+     * 
+     * Usage ?title=lookup [not an exact match]
      *
      * @param Builder $builder
      * @param mixed $value

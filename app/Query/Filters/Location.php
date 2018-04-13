@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Builder;
 class Location implements Filter{
     /**
      * Apply a given search value to the builder instance.
+     * 
+     * Usage ?location=12.55,34,11,200
+     * Usage ?location=12.55,34,11
      *
      * @param Builder $builder
      * @param mixed $value

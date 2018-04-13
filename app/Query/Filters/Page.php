@@ -9,6 +9,8 @@ class Page implements Filter{
 
     /**
      * Apply a given search value to the builder instance.
+     * 
+     * Usage ?page=3
      *
      * @param Builder $builder
      * @param mixed $value
