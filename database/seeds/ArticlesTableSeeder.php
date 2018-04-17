@@ -33,7 +33,7 @@ class ArticlesTableSeeder extends Seeder
        
         $type=['blog','blog','blog','blog','blog',
         'video','video','video','video','video',
-        'Image','Image','Image','Image','Image'];
+        'picture','picture','picture','picture','picture'];
        
         $location=['28.5355, 77.3910', '19.0760, 72.8777','28.7041, 77.1025','28.4595, 77.0266','28.5355, 77.3910',
         '28.5355, 77.3910', '19.0760, 72.8777','28.7041, 77.1025','28.4595, 77.0266','28.5355, 77.3910',
